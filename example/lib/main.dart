@@ -1,7 +1,6 @@
 import 'package:example/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:folivora_palette/folivora_palette.dart';
 import 'package:folivora_widget/folivora_widget.dart';
 
 void main() {
@@ -68,6 +67,16 @@ class MyHomePage extends ConsumerWidget {
             FvButton.elevated(
               onPressed: () {},
               text: "Elevated Button",
+            ),
+            const SizedBox(height: 20),
+            FvButton.filled(
+              onPressed: () {},
+              text: "Filled Button",
+            ),
+            const SizedBox(height: 20),
+            FvButton.fullWidth(
+              onPressed: () {},
+              text: "FullWidth Button",
             ),
           ],
         ),
