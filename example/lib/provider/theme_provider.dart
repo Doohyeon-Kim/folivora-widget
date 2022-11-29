@@ -3,18 +3,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:folivora_palette/folivora_palette.dart';
 
 final themeProvider =
-    StateProvider<ThemeNotifier>((ref) => ThemeNotifier(FvTheme.dark));
+    StateNotifierProvider<ThemeNotifier, ThemeData>((ref) => ThemeNotifier());
 
-class ThemeNotifier extends StateNotifier {
-  ThemeNotifier(super.state);
-
-  ThemeData themeData = FvTheme.dark;
+class ThemeNotifier extends StateNotifier<ThemeData> {
+  ThemeNotifier() : super(FvTheme.dark);
 
   void setLightMode() {
-    state.value = FvTheme.light;
+    state = FvTheme.light;
   }
 
   void setDarkMode() {
-    state.value = FvTheme.dark;
+    state = FvTheme.dark;
   }
 }
