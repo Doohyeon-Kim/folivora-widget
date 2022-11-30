@@ -6,13 +6,15 @@ final themeProvider =
     StateNotifierProvider<ThemeNotifier, ThemeData>((ref) => ThemeNotifier());
 
 class ThemeNotifier extends StateNotifier<ThemeData> {
-  ThemeNotifier() : super(FvTheme.dark);
+  ThemeNotifier() : super(FvTheme.light);
 
   void setLightMode() {
+    FvTheme.state = ThemeState.light;
     state = FvTheme.light;
   }
 
   void setDarkMode() {
+    FvTheme.state = ThemeState.dark;
     state = FvTheme.dark;
   }
 }

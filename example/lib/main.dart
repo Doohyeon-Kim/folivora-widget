@@ -78,6 +78,11 @@ class MyHomePage extends ConsumerWidget {
               onPressed: () {},
               text: "FullWidth Button",
             ),
+            const SizedBox(height: 20),
+            FvButton.outlined(
+              onPressed: () {},
+              text: "Outlined Button",
+            ),
           ],
         ),
       ),

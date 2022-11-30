@@ -13,7 +13,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.5
-  folivora_palette: ^0.0.7
+  folivora_palette: ^0.0.9
 
 dev_dependencies:
   flutter_test:

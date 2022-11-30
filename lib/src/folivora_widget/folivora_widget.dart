@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FvWidget extends StatefulWidget {
+abstract class FvWidget extends StatefulWidget {
   const FvWidget({Key? key, required this.folivoraWidget}) : super(key: key);
 
   final Widget folivoraWidget;

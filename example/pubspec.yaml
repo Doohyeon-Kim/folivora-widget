@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.5
-  folivora_palette: ^0.0.7
+  folivora_palette: ^0.0.9
   folivora_widget:
     path: ../
   flutter_riverpod: ^2.1.1
