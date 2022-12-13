@@ -27,28 +27,28 @@ class FolivoraConvexButton extends FvButton {
               onPressed: onPressed,
               color: color ??
                   (FvTheme.state == ThemeState.light
-                      ? FvTheme.light.colorScheme.primary
-                      : FvTheme.dark.colorScheme.primary),
+                      ? FvTheme.light.colorScheme.primaryContainer
+                      : FvTheme.dark.colorScheme.background),
               pressedColor: pressedColor ??
                   (FvTheme.state == ThemeState.light
-                      ? FvTheme.light.colorScheme.onPrimaryContainer
+                      ? FvTheme.light.colorScheme.primaryContainer
                           .withOpacity(0.8)
-                      : FvTheme.dark.colorScheme.primary.withOpacity(0.8)),
+                      : FvTheme.dark.colorScheme.background.withOpacity(0.8)),
               foregroundColor: foregroundColor ??
                   (FvTheme.state == ThemeState.light
                       ? FvTheme.light.colorScheme.onPrimary
-                      : FvTheme.dark.colorScheme.onPrimary),
+                      : FvTheme.dark.colorScheme.primary),
               text: text,
               textStyle: textStyle ??
                   TextStyle(
                       color: FvTheme.state == ThemeState.light
-                          ? FvTheme.light.colorScheme.onPrimary
-                          : FvTheme.dark.colorScheme.onPrimary),
+                          ? FvTheme.light.colorScheme.primary
+                          : FvTheme.dark.colorScheme.primary),
               pressedTextStyle: pressedTextStyle ??
                   TextStyle(
                       color: FvTheme.state == ThemeState.light
                           ? FvTheme.light.colorScheme.onPrimary
-                          : FvTheme.dark.colorScheme.onPrimary),
+                          : FvTheme.dark.colorScheme.primary),
               padding: padding,
               circular: circular ?? 4,
               width: width ?? 64,
@@ -103,9 +103,19 @@ class FolivoraFilledButton extends FvButton {
             onPressed: onPressed,
             style: OutlinedButton.styleFrom(
                 minimumSize: Size(width ?? 64, height ?? 36),
-                backgroundColor: color ?? FvColor.folivora,
-                foregroundColor: foregroundColor ?? Colors.black,
-                textStyle: textStyle,
+                backgroundColor: color ??
+                    (FvTheme.state == ThemeState.light
+                        ? FvTheme.light.colorScheme.primary
+                        : FvTheme.dark.colorScheme.primary),
+                foregroundColor: foregroundColor ??
+                    (FvTheme.state == ThemeState.light
+                        ? FvTheme.light.colorScheme.onPrimary
+                        : FvTheme.dark.colorScheme.onPrimary),
+                textStyle: textStyle ??
+                    TextStyle(
+                        color: FvTheme.state == ThemeState.light
+                            ? FvTheme.light.colorScheme.onPrimary
+                            : FvTheme.dark.colorScheme.onPrimary),
                 padding: padding,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(circular ?? 4))),
@@ -133,9 +143,19 @@ class FolivoraFullWidthButton extends FvButton {
             onPressed: onPressed,
             style: OutlinedButton.styleFrom(
                 minimumSize: Size(double.infinity, height ?? 36),
-                backgroundColor: color ?? FvColor.folivora,
-                foregroundColor: foregroundColor ?? Colors.white,
-                textStyle: textStyle,
+                backgroundColor: color ??
+                    (FvTheme.state == ThemeState.light
+                        ? FvTheme.light.colorScheme.primary
+                        : FvTheme.dark.colorScheme.primary),
+                foregroundColor: foregroundColor ??
+                    (FvTheme.state == ThemeState.light
+                        ? FvTheme.light.colorScheme.onPrimary
+                        : FvTheme.dark.colorScheme.onPrimary),
+                textStyle: textStyle ??
+                    TextStyle(
+                        color: FvTheme.state == ThemeState.light
+                            ? FvTheme.light.colorScheme.onPrimary
+                            : FvTheme.dark.colorScheme.onPrimary),
                 padding: padding,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(circular ?? 0))),

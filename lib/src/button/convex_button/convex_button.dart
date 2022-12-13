@@ -22,12 +22,44 @@ Widget convexButtonWidget({
   switch (status) {
     case Status.loading:
       {
+        return StatefulBuilder(
+          builder: (context, state) {
+            return GestureDetector(
+              onTapDown: (TapDownDetails tapped) {
+                status = Status.active;
+                state(() {});
+              },
+              onTapUp: (TapUpDetails tapped) {
+                status = Status.normal;
+                state(() {});
+              },
+              child: Container(
+                width: width,
+                height: height,
+                decoration: BoxDecoration(
+                  color: status == Status.normal ? color : pressedColor,
+                  borderRadius: BorderRadius.circular(circular),
+                ),
+                alignment: Alignment.center,
+                child: child ??
+                    SizedBox(
+                      width: height / 2,
+                      height: height / 2,
+                      child: CircularProgressIndicator(
+                        color: foregroundColor,
+                      ),
+                    ),
+              ),
+            );
+          },
+        );
         return OutlinedButton(
           onPressed: () {},
           style: OutlinedButton.styleFrom(
               minimumSize: Size(width, height),
-              backgroundColor: pressedColor,
+              backgroundColor: color,
               foregroundColor: foregroundColor,
+              side: BorderSide(color: color, style: BorderStyle.solid),
               textStyle: textStyle,
               padding: padding,
               shape: RoundedRectangleBorder(
@@ -46,12 +78,45 @@ Widget convexButtonWidget({
       {
         return Opacity(
           opacity: 0.4,
+          child: StatefulBuilder(
+            builder: (context, state) {
+              return GestureDetector(
+                onTapDown: (TapDownDetails tapped) {
+                  status = Status.active;
+                  state(() {});
+                },
+                onTapUp: (TapUpDetails tapped) {
+                  status = Status.normal;
+                  state(() {});
+                },
+                child: Container(
+                  width: width,
+                  height: height,
+                  decoration: BoxDecoration(
+                    color: status == Status.normal ? color : pressedColor,
+                    borderRadius: BorderRadius.circular(circular),
+                  ),
+                  alignment: Alignment.center,
+                  child: child ??
+                      Text(text,
+                          style: status == Status.normal
+                              ? textStyle
+                              : pressedTextStyle),
+                ),
+              );
+            },
+          ),
+        );
+
+        Opacity(
+          opacity: 0.4,
           child: OutlinedButton(
             onPressed: () {},
             style: OutlinedButton.styleFrom(
                 minimumSize: Size(width, height),
                 backgroundColor: color,
                 foregroundColor: foregroundColor,
+                side: BorderSide(color: color, style: BorderStyle.solid),
                 textStyle: textStyle,
                 padding: padding,
                 shape: RoundedRectangleBorder(
