@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:folivora_palette/folivora_palette.dart';
 import 'package:folivora_widget/folivora_widget.dart';
+import 'package:folivora_widget/src/button/button_widgets/filled_button.dart';
 
-import 'convex_button/convex_button.dart';
+import 'button_widgets/convex_button.dart';
+import 'button_widgets/elevated_button.dart';
 
 class FolivoraConvexButton extends FvButton {
   FolivoraConvexButton({
     Key? key,
+    BuildContext? context,
     required VoidCallback onPressed,
     String text = "",
     TextStyle? textStyle,
     TextStyle? pressedTextStyle,
     EdgeInsetsGeometry? padding,
-    Status status = Status.normal,
+    WidgetStatus? widgetStatus,
     Color? color,
     Color? foregroundColor,
     Color? pressedColor,
@@ -23,32 +26,17 @@ class FolivoraConvexButton extends FvButton {
   }) : super(
           key: key,
           buttonWidget: convexButtonWidget(
-              status: status,
+              status: widgetStatus ?? WidgetStatus.normal,
               onPressed: onPressed,
-              color: color ??
-                  (FvTheme.state == ThemeState.light
-                      ? FvTheme.light.colorScheme.primaryContainer
-                      : FvTheme.dark.colorScheme.background),
+              color: color ?? FvTheme.light.colorScheme.primary,
               pressedColor: pressedColor ??
-                  (FvTheme.state == ThemeState.light
-                      ? FvTheme.light.colorScheme.primaryContainer
-                          .withOpacity(0.8)
-                      : FvTheme.dark.colorScheme.background.withOpacity(0.8)),
-              foregroundColor: foregroundColor ??
-                  (FvTheme.state == ThemeState.light
-                      ? FvTheme.light.colorScheme.onPrimary
-                      : FvTheme.dark.colorScheme.primary),
+                      FvTheme.light.colorScheme.primary.withOpacity(0.7),
+              foregroundColor: foregroundColor ?? FvTheme.light.colorScheme.onPrimary,
               text: text,
               textStyle: textStyle ??
-                  TextStyle(
-                      color: FvTheme.state == ThemeState.light
-                          ? FvTheme.light.colorScheme.primary
-                          : FvTheme.dark.colorScheme.primary),
+                  TextStyle(color: FvTheme.light.colorScheme.onPrimary),
               pressedTextStyle: pressedTextStyle ??
-                  TextStyle(
-                      color: FvTheme.state == ThemeState.light
-                          ? FvTheme.light.colorScheme.onPrimary
-                          : FvTheme.dark.colorScheme.primary),
+                  TextStyle(color: FvTheme.light.colorScheme.onPrimary),
               padding: padding,
               circular: circular ?? 4,
               width: width ?? 64,
@@ -61,25 +49,32 @@ class FolivoraElevatedButton extends FvButton {
   FolivoraElevatedButton({
     Key? key,
     required VoidCallback onPressed,
-    Status status = Status.normal,
+    WidgetStatus? widgetStatus,
     String text = "",
     TextStyle? textStyle,
     EdgeInsetsGeometry? padding,
     double? circular,
-    Color? color,
+    Color? foregroundColor,
+    Color? backgroundColor,
     double? width,
     double? height,
+    double? elevation,
     Widget? child,
   }) : super(
           key: key,
-          buttonWidget: ElevatedButton(
-            onPressed: onPressed,
-            child: child ??
-                Text(
-                  text,
-                  style: textStyle,
-                ),
-          ),
+          buttonWidget: elevatedButtonWidget(
+              status: widgetStatus ?? WidgetStatus.normal,
+              onPressed: onPressed,
+              text: text,
+              textStyle: textStyle,
+              foregroundColor: FvTheme.light.colorScheme.primary,
+              backgroundColor: FvTheme.light.colorScheme.background,
+              circular: circular ?? 4,
+              padding: padding,
+              elevation: elevation ?? 2,
+              width: width ?? 64,
+              height: height ?? 36,
+              child: child),
         );
 }
 
@@ -87,7 +82,7 @@ class FolivoraFilledButton extends FvButton {
   FolivoraFilledButton({
     Key? key,
     required VoidCallback onPressed,
-    Status status = Status.normal,
+    WidgetStatus? widgetStatus,
     String text = "",
     TextStyle? textStyle,
     EdgeInsetsGeometry? padding,
@@ -98,77 +93,27 @@ class FolivoraFilledButton extends FvButton {
     double? height,
     Widget? child,
   }) : super(
-          key: key,
-          buttonWidget: OutlinedButton(
-            onPressed: onPressed,
-            style: OutlinedButton.styleFrom(
-                minimumSize: Size(width ?? 64, height ?? 36),
-                backgroundColor: color ??
-                    (FvTheme.state == ThemeState.light
-                        ? FvTheme.light.colorScheme.primary
-                        : FvTheme.dark.colorScheme.primary),
-                foregroundColor: foregroundColor ??
-                    (FvTheme.state == ThemeState.light
-                        ? FvTheme.light.colorScheme.onPrimary
-                        : FvTheme.dark.colorScheme.onPrimary),
-                textStyle: textStyle ??
-                    TextStyle(
-                        color: FvTheme.state == ThemeState.light
-                            ? FvTheme.light.colorScheme.onPrimary
-                            : FvTheme.dark.colorScheme.onPrimary),
+            key: key,
+            buttonWidget: filledButtonWidget(
+                status: widgetStatus ?? WidgetStatus.normal,
+                onPressed: onPressed,
+                text: text,
+                textStyle: textStyle,
                 padding: padding,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(circular ?? 4))),
-            child: child ?? Text(text, style: textStyle),
-          ),
-        );
-}
-
-class FolivoraFullWidthButton extends FvButton {
-  FolivoraFullWidthButton({
-    Key? key,
-    required VoidCallback onPressed,
-    Status status = Status.normal,
-    String text = "",
-    TextStyle? textStyle,
-    EdgeInsetsGeometry? padding,
-    double? circular,
-    Color? color,
-    Color? foregroundColor,
-    double? height,
-    Widget? child,
-  }) : super(
-          key: key,
-          buttonWidget: OutlinedButton(
-            onPressed: onPressed,
-            style: OutlinedButton.styleFrom(
-                minimumSize: Size(double.infinity, height ?? 36),
-                backgroundColor: color ??
-                    (FvTheme.state == ThemeState.light
-                        ? FvTheme.light.colorScheme.primary
-                        : FvTheme.dark.colorScheme.primary),
-                foregroundColor: foregroundColor ??
-                    (FvTheme.state == ThemeState.light
-                        ? FvTheme.light.colorScheme.onPrimary
-                        : FvTheme.dark.colorScheme.onPrimary),
-                textStyle: textStyle ??
-                    TextStyle(
-                        color: FvTheme.state == ThemeState.light
-                            ? FvTheme.light.colorScheme.onPrimary
-                            : FvTheme.dark.colorScheme.onPrimary),
-                padding: padding,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(circular ?? 0))),
-            child: child ?? Text(text, style: textStyle),
-          ),
-        );
+                backgroundColor: color ?? FvTheme.light.colorScheme.primary,
+                foregroundColor:
+                    foregroundColor ?? FvTheme.light.colorScheme.onPrimary,
+                circular: circular ?? 4,
+                width: width ?? 64,
+                height: height ?? 36,
+                child: child));
 }
 
 class FolivoraOutlinedButton extends FvButton {
   FolivoraOutlinedButton(
       {Key? key,
       required VoidCallback onPressed,
-      Status status = Status.normal,
+      WidgetStatus status = WidgetStatus.normal,
       Widget? child,
       double? width,
       double? height,
@@ -185,10 +130,7 @@ class FolivoraOutlinedButton extends FvButton {
             onPressed: onPressed,
             style: OutlinedButton.styleFrom(
                 minimumSize: Size(width ?? 64, height ?? 36),
-                backgroundColor: backgroundColor ??
-                    (FvTheme.state == ThemeState.light
-                        ? FvTheme.light.canvasColor
-                        : FvTheme.dark.canvasColor),
+                backgroundColor: backgroundColor ?? FvTheme.light.canvasColor,
                 foregroundColor: foregroundColor ??
                     (FvTheme.state == ThemeState.light
                         ? FvColor.folivora
@@ -205,7 +147,7 @@ class FolivoraOutlinedButton extends FvButton {
 class FolivoraDisabledButton extends FvButton {
   FolivoraDisabledButton(
       {Key? key,
-      Status status = Status.disabled,
+      WidgetStatus status = WidgetStatus.disabled,
       Widget? child,
       double? width,
       double? height,

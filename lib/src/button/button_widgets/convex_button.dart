@@ -1,43 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:folivora_palette/folivora_palette.dart';
-
 import '../../status/status.dart';
 
 Widget convexButtonWidget({
   Key? key,
-  required Status status,
+  required WidgetStatus status,
   required VoidCallback onPressed,
   required String text,
   required TextStyle? textStyle,
   required TextStyle? pressedTextStyle,
   required EdgeInsetsGeometry? padding,
-  required Color color,
+  required Color? color,
   required Color? foregroundColor,
-  required Color pressedColor,
+  required Color? pressedColor,
   required double circular,
   required double width,
   required double height,
   required Widget? child,
 }) {
   switch (status) {
-    case Status.loading:
+    case WidgetStatus.loading:
       {
         return StatefulBuilder(
           builder: (context, state) {
             return GestureDetector(
               onTapDown: (TapDownDetails tapped) {
-                status = Status.active;
+                status = WidgetStatus.active;
                 state(() {});
               },
               onTapUp: (TapUpDetails tapped) {
-                status = Status.normal;
+                status = WidgetStatus.loading;
                 state(() {});
+                onPressed.call();
               },
               child: Container(
+                padding: padding,
                 width: width,
                 height: height,
                 decoration: BoxDecoration(
-                  color: status == Status.normal ? color : pressedColor,
+                  color: pressedColor,
                   borderRadius: BorderRadius.circular(circular),
                 ),
                 alignment: Alignment.center,
@@ -53,28 +53,8 @@ Widget convexButtonWidget({
             );
           },
         );
-        return OutlinedButton(
-          onPressed: () {},
-          style: OutlinedButton.styleFrom(
-              minimumSize: Size(width, height),
-              backgroundColor: color,
-              foregroundColor: foregroundColor,
-              side: BorderSide(color: color, style: BorderStyle.solid),
-              textStyle: textStyle,
-              padding: padding,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(circular))),
-          child: child ??
-              SizedBox(
-                width: height / 2,
-                height: height / 2,
-                child: CircularProgressIndicator(
-                  color: foregroundColor,
-                ),
-              ),
-        );
       }
-    case Status.disabled:
+    case WidgetStatus.disabled:
       {
         return Opacity(
           opacity: 0.4,
@@ -82,24 +62,26 @@ Widget convexButtonWidget({
             builder: (context, state) {
               return GestureDetector(
                 onTapDown: (TapDownDetails tapped) {
-                  status = Status.active;
+                  status = WidgetStatus.active;
                   state(() {});
                 },
                 onTapUp: (TapUpDetails tapped) {
-                  status = Status.normal;
+                  status = WidgetStatus.disabled;
                   state(() {});
+                  onPressed.call();
                 },
                 child: Container(
+                  padding: padding,
                   width: width,
                   height: height,
                   decoration: BoxDecoration(
-                    color: status == Status.normal ? color : pressedColor,
+                    color: status == WidgetStatus.disabled ? color : pressedColor,
                     borderRadius: BorderRadius.circular(circular),
                   ),
                   alignment: Alignment.center,
                   child: child ??
                       Text(text,
-                          style: status == Status.normal
+                          style: status == WidgetStatus.disabled
                               ? textStyle
                               : pressedTextStyle),
                 ),
@@ -107,53 +89,34 @@ Widget convexButtonWidget({
             },
           ),
         );
-
-        Opacity(
-          opacity: 0.4,
-          child: OutlinedButton(
-            onPressed: () {},
-            style: OutlinedButton.styleFrom(
-                minimumSize: Size(width, height),
-                backgroundColor: color,
-                foregroundColor: foregroundColor,
-                side: BorderSide(color: color, style: BorderStyle.solid),
-                textStyle: textStyle,
-                padding: padding,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(circular))),
-            child: child ??
-                Text(text,
-                    style:
-                        status == Status.normal ? textStyle : pressedTextStyle),
-          ),
-        );
       }
-    case Status.normal:
+    case WidgetStatus.normal:
     default:
       {
         return StatefulBuilder(
           builder: (context, state) {
             return GestureDetector(
               onTapDown: (TapDownDetails tapped) {
-                status = Status.active;
+                status = WidgetStatus.active;
                 state(() {});
               },
               onTapUp: (TapUpDetails tapped) {
-                status = Status.normal;
+                status = WidgetStatus.normal;
                 state(() {});
                 onPressed.call();
               },
               child: Container(
+                padding: padding,
                 width: width,
                 height: height,
                 decoration: BoxDecoration(
-                  color: status == Status.normal ? color : pressedColor,
+                  color: status == WidgetStatus.normal ? color : pressedColor,
                   borderRadius: BorderRadius.circular(circular),
                 ),
                 alignment: Alignment.center,
                 child: child ??
                     Text(text,
-                        style: status == Status.normal
+                        style: status == WidgetStatus.normal
                             ? textStyle
                             : pressedTextStyle),
               ),

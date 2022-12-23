@@ -3,10 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:folivora_palette/folivora_palette.dart';
 
 final themeProvider =
-    StateNotifierProvider<ThemeNotifier, ThemeData>((ref) => ThemeNotifier());
+    StateNotifierProvider<ThemeViewModel, ThemeData>((ref) => ThemeViewModel());
 
-class ThemeNotifier extends StateNotifier<ThemeData> {
-  ThemeNotifier() : super(FvTheme.light);
+class ThemeViewModel extends StateNotifier<ThemeData> {
+  ThemeViewModel() : super(FvTheme.light);
 
   void setLightMode() {
     FvTheme.state = ThemeState.light;

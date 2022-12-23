@@ -1,1 +1,1 @@
-enum Status {normal, focus, hover, active, loading, disabled, error}
+enum WidgetStatus {normal, focus, hover, active, loading, disabled, error}

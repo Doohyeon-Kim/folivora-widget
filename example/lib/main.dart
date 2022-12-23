@@ -1,7 +1,6 @@
-import 'package:example/provider/theme_provider.dart';
+import 'package:example/provider/theme_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'home.dart';
 import 'router/router.dart';
 
 void main() {

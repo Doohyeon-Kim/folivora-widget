@@ -12,7 +12,7 @@ abstract class FvButton extends FvWidget {
     Key? key,
     required VoidCallback onPressed,
     String text,
-    Status status,
+    WidgetStatus widgetStatus,
     TextStyle? textStyle,
     TextStyle? pressedTextStyle,
     EdgeInsetsGeometry? padding,
@@ -28,13 +28,16 @@ abstract class FvButton extends FvWidget {
   factory FvButton.elevated({
     Key? key,
     required VoidCallback onPressed,
+    WidgetStatus widgetStatus,
     String text,
     TextStyle? textStyle,
     EdgeInsetsGeometry? padding,
     double? circular,
-    Color? color,
+    Color? foregroundColor,
+    Color? backgroundColor,
     double? width,
     double? height,
+    double? elevation,
     Widget? child,
   }) = FolivoraElevatedButton;
 
@@ -50,19 +53,8 @@ abstract class FvButton extends FvWidget {
     double? width,
     double? height,
     Widget? child,
+    WidgetStatus widgetStatus,
   }) = FolivoraFilledButton;
-
-  factory FvButton.fullWidth({
-    Key? key,
-    required VoidCallback onPressed,
-    String text,
-    TextStyle? textStyle,
-    EdgeInsetsGeometry? padding,
-    double? circular,
-    Color? color,
-    double? height,
-    Widget? child,
-  }) = FolivoraFullWidthButton;
 
   factory FvButton.outlined(
       {required VoidCallback onPressed,
