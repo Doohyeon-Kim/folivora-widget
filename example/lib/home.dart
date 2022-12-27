@@ -25,22 +25,20 @@ class HomeScreen extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FvButton.elevated(
+                  context: context,
                   onPressed: () {
                     ref.read(themeProvider.notifier).setLightMode();
                   },
-                  foregroundColor: Theme.of(context).colorScheme.primary,
-                  backgroundColor: Theme.of(context).colorScheme.background,
                   width: 128,
                   text: "Light Theme"),
               const SizedBox(
                 width: 24,
               ),
               FvButton.elevated(
+                  context: context,
                   onPressed: () {
                     ref.read(themeProvider.notifier).setDarkMode();
                   },
-                  foregroundColor: Theme.of(context).colorScheme.primary,
-                  backgroundColor: Theme.of(context).colorScheme.background,
                   width: 128,
                   text: "Dark Theme"),
             ],
@@ -49,15 +47,24 @@ class HomeScreen extends ConsumerWidget {
             height: 24,
           ),
           FvButton.elevated(
+              context: context,
               onPressed: () {
                 GoRouter.of(context)
                     .pushNamed(AppRoute.name.buttonExamplesScreen);
               },
-              foregroundColor: Theme.of(context).colorScheme.primary,
-              backgroundColor: Theme.of(context).colorScheme.background,
               width: 128,
               text: "Go To Button Examples Screen"),
-          // ButtonExamplesScreen(),
+          const SizedBox(
+            height: 24,
+          ),
+          FvButton.elevated(
+              context: context,
+              onPressed: () {
+                GoRouter.of(context)
+                    .pushNamed(AppRoute.name.textFieldExamplesScreen);
+              },
+              width: 128,
+              text: "Go To Text Field Examples Screen"),
         ],
       ),
     );

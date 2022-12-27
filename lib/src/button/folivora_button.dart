@@ -10,6 +10,7 @@ abstract class FvButton extends FvWidget {
 
   factory FvButton.convex({
     Key? key,
+    required BuildContext context,
     required VoidCallback onPressed,
     String text,
     WidgetStatus widgetStatus,
@@ -27,6 +28,7 @@ abstract class FvButton extends FvWidget {
 
   factory FvButton.elevated({
     Key? key,
+    required BuildContext context,
     required VoidCallback onPressed,
     WidgetStatus widgetStatus,
     String text,
@@ -43,6 +45,7 @@ abstract class FvButton extends FvWidget {
 
   factory FvButton.filled({
     Key? key,
+    required BuildContext context,
     required VoidCallback onPressed,
     String text,
     TextStyle? textStyle,
@@ -57,7 +60,9 @@ abstract class FvButton extends FvWidget {
   }) = FolivoraFilledButton;
 
   factory FvButton.outlined(
-      {required VoidCallback onPressed,
+      {Key? key,
+      required BuildContext context,
+      required VoidCallback onPressed,
       Widget? child,
       double? width,
       double? height,
@@ -70,6 +75,7 @@ abstract class FvButton extends FvWidget {
 
   factory FvButton.disabled(
       {Key? key,
+        required BuildContext context,
       Widget? child,
       double? width,
       double? height,
@@ -83,6 +89,8 @@ abstract class FvButton extends FvWidget {
 
   factory FvButton.cancel(
       {Key? key,
+        required BuildContext context,
+        required VoidCallback onPressed,
       Widget? child,
       double? width,
       double? height,
@@ -92,7 +100,7 @@ abstract class FvButton extends FvWidget {
       BorderSide? borderSide,
       TextStyle? textStyle,
       double? circular,
-      EdgeInsetsGeometry? padding}) = FolivoraDisabledButton;
+      EdgeInsetsGeometry? padding}) = FolivoraCancelButton;
 
   // factory FvButton.text(
   //     {Key? key,
@@ -103,17 +111,9 @@ abstract class FvButton extends FvWidget {
   //       TextStyle? textStyle,
   //       EdgeInsetsGeometry? padding}) = _DestructiveTextButton;
 
-  // factory FvButton.destructiveText(
-  //     {Key? key,
-  //       required VoidCallback onPressed,
-  //       required String text,
-  //       Size? size,
-  //       Color? color,
-  //       TextStyle? textStyle,
-  //       EdgeInsetsGeometry? padding}) = _DestructiveTextButton;
-
   factory FvButton.icon({
     Key? key,
+    required BuildContext context,
     required VoidCallback onPressed,
     required Icon icon,
     Color? color,

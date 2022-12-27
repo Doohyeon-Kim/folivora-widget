@@ -11,10 +11,12 @@ class _RoutePath {
   String root = '/';
   String home = 'home';
   String buttonExamplesScreen = 'button-examples-screen';
+  String textFieldExamplesScreen = 'text-field-examples-screen';
 }
 
 class _NamedRoute {
   String root = '/';
   String home = 'home';
   String buttonExamplesScreen = 'button_examples_screen';
+  String textFieldExamplesScreen = 'text_field_examples_screen';
 }

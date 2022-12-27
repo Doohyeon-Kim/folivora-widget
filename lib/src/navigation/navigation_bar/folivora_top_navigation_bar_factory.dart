@@ -14,6 +14,7 @@ class FolivoraNavigationBarWithBackButton extends FvTopNavigationBar {
           navigationBarHeight: navigationBarHeight,
           widgetWidth: widgetWidth,
           leftWidget: FvButton.icon(
+            context: context,
             splashRadius: widgetWidth ?? 32,
             onPressed: () => Navigator.of(context).pop(),
             /// for go router user

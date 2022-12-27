@@ -1,6 +1,4 @@
-import 'package:example/buttons/customized_button.dart';
 import 'package:flutter/material.dart';
-import 'package:folivora_palette/folivora_palette.dart';
 import 'package:folivora_widget/folivora_widget.dart';
 
 class ButtonExamplesPage extends StatelessWidget {
@@ -15,78 +13,45 @@ class ButtonExamplesPage extends StatelessWidget {
             context: context,
           ),
           const SizedBox(height: 20),
-          CustomizedButton(
-            onPressed: () {},
-            text: "Customized Button",
-            width: 160,
-          ),
-          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FvButton.convex(
+                context: context,
                 onPressed: () {},
-                color: Theme.of(context).colorScheme.primary,
-                pressedColor:
-                    Theme.of(context).colorScheme.primary.withOpacity(0.7),
-                foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                textStyle:
-                    TextStyle(color: Theme.of(context).colorScheme.onPrimary),
-                pressedTextStyle:
-                    TextStyle(color: Theme.of(context).colorScheme.onPrimary),
                 text: "Convex",
                 width: 92,
               ),
               const SizedBox(width: 8),
               FvButton.convex(
+                context: context,
                 onPressed: () {},
                 width: 92,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: const [
                     Icon(
                       Icons.add,
-                      color: FvTheme.state == ThemeState.light
-                          ? Theme.of(context).colorScheme.onPrimary
-                          : FvTheme.dark.colorScheme.primary,
                       size: 20,
                     ),
                     Text(
                       "Icon",
-                      style: TextStyle(
-                          color: FvTheme.state == ThemeState.light
-                              ? FvTheme.light.colorScheme.onPrimary
-                              : FvTheme.dark.colorScheme.primary),
                     ),
                   ],
                 ),
               ),
               const SizedBox(width: 8),
               FvButton.convex(
+                context: context,
                 onPressed: () {},
-                color: Theme.of(context).colorScheme.primary,
-                pressedColor:
-                    Theme.of(context).colorScheme.primary.withOpacity(0.7),
-                foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                textStyle:
-                    TextStyle(color: Theme.of(context).colorScheme.onPrimary),
-                pressedTextStyle:
-                    TextStyle(color: Theme.of(context).colorScheme.onPrimary),
                 widgetStatus: WidgetStatus.loading,
                 width: 92,
               ),
               const SizedBox(width: 8),
               FvButton.convex(
+                context: context,
                 text: "Disabled",
                 onPressed: () {},
-                color: Theme.of(context).colorScheme.primary,
-                pressedColor:
-                    Theme.of(context).colorScheme.primary.withOpacity(0.7),
-                foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                textStyle:
-                    TextStyle(color: Theme.of(context).colorScheme.onPrimary),
-                pressedTextStyle:
-                    TextStyle(color: Theme.of(context).colorScheme.onPrimary),
                 widgetStatus: WidgetStatus.disabled,
                 width: 92,
               ),
@@ -97,12 +62,14 @@ class ButtonExamplesPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FvButton.elevated(
+                context: context,
                 onPressed: () {},
                 text: "Elevated",
                 width: 92,
               ),
               const SizedBox(width: 8),
               FvButton.elevated(
+                context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
                 width: 92,
@@ -121,12 +88,14 @@ class ButtonExamplesPage extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               FvButton.elevated(
+                context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
                 width: 92,
               ),
               const SizedBox(width: 8),
               FvButton.elevated(
+                context: context,
                 onPressed: () {},
                 text: "Disabled",
                 widgetStatus: WidgetStatus.disabled,
@@ -139,18 +108,21 @@ class ButtonExamplesPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FvButton.filled(
+                context: context,
                 onPressed: () {},
                 text: "Filled",
                 width: 92,
               ),
               const SizedBox(width: 8),
               FvButton.filled(
+                context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
                 width: 92,
               ),
               const SizedBox(width: 8),
               FvButton.filled(
+                context: context,
                 onPressed: () {},
                 text: "Disabled",
                 widgetStatus: WidgetStatus.disabled,
@@ -161,38 +133,54 @@ class ButtonExamplesPage extends StatelessWidget {
           const SizedBox(height: 20),
           const SizedBox(height: 20),
           FvButton.outlined(
+            context: context,
             onPressed: () {},
             text: "Outlined Button",
           ),
           const SizedBox(height: 20),
           FvButton.disabled(
+            context: context,
             text: "Disabled Button",
           ),
           const SizedBox(height: 20),
           FvButton.icon(
+              context: context,
               onPressed: () {},
               icon: const Icon(Icons.wb_incandescent_outlined)),
           Column(
             children: [
               FvButton.filled(
+                context: context,
                 onPressed: () {},
                 text: "FullWidth Button",
                 width: double.infinity,
                 height: 48,
+                circular: 0,
               ),
               const SizedBox(height: 8),
               FvButton.filled(
+                context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
                 width: double.infinity,
                 height: 48,
+                circular: 0,
               ),
               const SizedBox(height: 8),
               FvButton.filled(
+                context: context,
                 onPressed: () {},
                 text: "Disabled Button",
                 widgetStatus: WidgetStatus.disabled,
                 width: double.infinity,
+                height: 48,
+                circular: 0,
+              ),
+              const SizedBox(height: 8),
+              FvButton.filled(
+                context: context,
+                onPressed: () {},
+                text: "Cancel Button",
                 height: 48,
               ),
             ],
