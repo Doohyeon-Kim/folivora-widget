@@ -1,4 +1,4 @@
-import 'package:example/provider/theme_view_model.dart';
+import 'package:example/view_model/theme_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'router/router.dart';

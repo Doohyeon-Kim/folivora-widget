@@ -5,7 +5,7 @@ import 'package:folivora_palette/folivora_palette.dart';
 import 'package:folivora_widget/folivora_widget.dart';
 import 'package:go_router/go_router.dart';
 
-import 'provider/theme_view_model.dart';
+import 'view_model/theme_view_model.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({Key? key}) : super(key: key);

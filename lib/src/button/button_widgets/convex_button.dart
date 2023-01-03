@@ -16,6 +16,7 @@ Widget convexButtonWidget({
   required double width,
   required double height,
   required Widget? child,
+  required IconData? icon,
 }) {
   switch (status) {
     case WidgetStatus.loading:
@@ -37,7 +38,7 @@ Widget convexButtonWidget({
                 width: width,
                 height: height,
                 decoration: BoxDecoration(
-                  color: pressedColor,
+                  color: color,
                   borderRadius: BorderRadius.circular(circular),
                 ),
                 alignment: Alignment.center,
@@ -46,7 +47,9 @@ Widget convexButtonWidget({
                       width: height / 2,
                       height: height / 2,
                       child: CircularProgressIndicator(
-                        color: foregroundColor,
+                        color: status == WidgetStatus.loading
+                            ? foregroundColor
+                            : foregroundColor?.withOpacity(0.4),
                       ),
                     ),
               ),
@@ -75,7 +78,8 @@ Widget convexButtonWidget({
                   width: width,
                   height: height,
                   decoration: BoxDecoration(
-                    color: status == WidgetStatus.disabled ? color : pressedColor,
+                    color:
+                        status == WidgetStatus.disabled ? color : pressedColor,
                     borderRadius: BorderRadius.circular(circular),
                   ),
                   alignment: Alignment.center,
@@ -115,10 +119,21 @@ Widget convexButtonWidget({
                 ),
                 alignment: Alignment.center,
                 child: child ??
-                    Text(text,
-                        style: status == WidgetStatus.normal
-                            ? textStyle
-                            : pressedTextStyle),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        icon == null
+                            ? const SizedBox()
+                            : Icon(
+                                icon,
+                                color: Theme.of(context).colorScheme.onPrimary,
+                              ),
+                        Text(text,
+                            style: status == WidgetStatus.normal
+                                ? textStyle
+                                : pressedTextStyle),
+                      ],
+                    ),
               ),
             );
           },

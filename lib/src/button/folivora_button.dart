@@ -13,6 +13,7 @@ abstract class FvButton extends FvWidget {
     required BuildContext context,
     required VoidCallback onPressed,
     String text,
+    IconData? icon,
     WidgetStatus widgetStatus,
     TextStyle? textStyle,
     TextStyle? pressedTextStyle,
@@ -59,57 +60,46 @@ abstract class FvButton extends FvWidget {
     WidgetStatus widgetStatus,
   }) = FolivoraFilledButton;
 
+
+  factory FvButton.filledTonal({
+    Key? key,
+    required BuildContext context,
+    required VoidCallback onPressed,
+    String text,
+    TextStyle? textStyle,
+    EdgeInsetsGeometry? padding,
+    double? circular,
+    Color? color,
+    Color? foregroundColor,
+    double? width,
+    double? height,
+    Widget? child,
+    WidgetStatus widgetStatus,
+  }) = FolivoraFilledTonalButton;
+
   factory FvButton.outlined(
       {Key? key,
       required BuildContext context,
       required VoidCallback onPressed,
+      WidgetStatus widgetStatus,
       Widget? child,
       double? width,
       double? height,
       String text,
+      Color? borderColor,
       Color? foregroundColor,
       BorderSide? borderSide,
       TextStyle? textStyle,
       double? circular,
       EdgeInsetsGeometry? padding}) = FolivoraOutlinedButton;
 
-  factory FvButton.disabled(
-      {Key? key,
-        required BuildContext context,
-      Widget? child,
-      double? width,
-      double? height,
-      String text,
-      Color? foregroundColor,
-      Color? backgroundColor,
-      BorderSide? borderSide,
-      TextStyle? textStyle,
-      double? circular,
-      EdgeInsetsGeometry? padding}) = FolivoraDisabledButton;
-
-  factory FvButton.cancel(
-      {Key? key,
-        required BuildContext context,
-        required VoidCallback onPressed,
-      Widget? child,
-      double? width,
-      double? height,
-      String text,
-      Color? foregroundColor,
-      Color? backgroundColor,
-      BorderSide? borderSide,
-      TextStyle? textStyle,
-      double? circular,
-      EdgeInsetsGeometry? padding}) = FolivoraCancelButton;
-
-  // factory FvButton.text(
-  //     {Key? key,
-  //       required VoidCallback onPressed,
-  //       required String text,
-  //       Size? size,
-  //       Color? color,
-  //       TextStyle? textStyle,
-  //       EdgeInsetsGeometry? padding}) = _DestructiveTextButton;
+  factory FvButton.text({
+    Key? key,
+    required VoidCallback onPressed,
+    WidgetStatus? status,
+    ButtonStyle? style,
+    required Widget child,
+  }) = FolivoraTextButton;
 
   factory FvButton.icon({
     Key? key,
