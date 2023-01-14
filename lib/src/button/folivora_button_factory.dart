@@ -115,7 +115,6 @@ class FolivoraFilledButton extends FvButton {
                 child: child));
 }
 
-
 class FolivoraFilledTonalButton extends FvButton {
   FolivoraFilledTonalButton({
     Key? key,
@@ -132,20 +131,21 @@ class FolivoraFilledTonalButton extends FvButton {
     double? height,
     Widget? child,
   }) : super(
-      key: key,
-      buttonWidget: filledButtonWidget(
-          status: widgetStatus ?? WidgetStatus.normal,
-          onPressed: onPressed,
-          text: text,
-          textStyle: textStyle,
-          padding: padding,
-          backgroundColor: color ?? Theme.of(context).colorScheme.secondaryContainer,
-          foregroundColor:
-          foregroundColor ?? Theme.of(context).colorScheme.onSecondaryContainer,
-          circular: circular ?? 24,
-          width: width ?? 64,
-          height: height ?? 36,
-          child: child));
+            key: key,
+            buttonWidget: filledButtonWidget(
+                status: widgetStatus ?? WidgetStatus.normal,
+                onPressed: onPressed,
+                text: text,
+                textStyle: textStyle,
+                padding: padding,
+                backgroundColor:
+                    color ?? Theme.of(context).colorScheme.secondaryContainer,
+                foregroundColor: foregroundColor ??
+                    Theme.of(context).colorScheme.onSecondaryContainer,
+                circular: circular ?? 24,
+                width: width ?? 64,
+                height: height ?? 36,
+                child: child));
 }
 
 class FolivoraOutlinedButton extends FvButton {
@@ -170,8 +170,8 @@ class FolivoraOutlinedButton extends FvButton {
           buttonWidget: outlinedButtonWidget(
             onPressed: onPressed,
             status: widgetStatus ?? WidgetStatus.normal,
-            borderColor:
-                borderColor ?? Theme.of(context).colorScheme.onSecondaryContainer,
+            borderColor: borderColor ??
+                Theme.of(context).colorScheme.onSecondaryContainer,
             backgroundColor: backgroundColor ?? Theme.of(context).canvasColor,
             foregroundColor:
                 foregroundColor ?? Theme.of(context).colorScheme.primary,
@@ -220,4 +220,14 @@ class FolivoraIconButton extends FvButton {
         );
 }
 
-// class FolivoraFAB extends FvButton{}
+class FolivoraFab extends FvButton {
+  FolivoraFab({
+    Key? key,
+    required BuildContext context,
+    required VoidCallback onPressed,
+    required Widget icon,
+    Widget? child,
+    Color? color,
+  }) : super(
+            key: key, buttonWidget: FloatingActionButton(onPressed: onPressed, child: icon,));
+}

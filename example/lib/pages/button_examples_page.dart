@@ -259,6 +259,16 @@ class ButtonExamplesPage extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(Icons.wb_incandescent_outlined)),
           const SizedBox(height: 20),
+          Row(
+            children: [
+              FvButton.fab(
+                context: context,
+                onPressed: () {},
+                icon: const Icon(Icons.abc),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
           Column(
             children: [
               FvButton.filled(

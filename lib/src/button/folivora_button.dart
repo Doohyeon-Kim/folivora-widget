@@ -60,7 +60,6 @@ abstract class FvButton extends FvWidget {
     WidgetStatus widgetStatus,
   }) = FolivoraFilledButton;
 
-
   factory FvButton.filledTonal({
     Key? key,
     required BuildContext context,
@@ -110,17 +109,20 @@ abstract class FvButton extends FvWidget {
     double? splashRadius,
   }) = FolivoraIconButton;
 
-// factory FvButton.fab({
-//   required VoidCallback onPressed,
-//   required Widget child,
-//   Color? backgroundColor,
-// }) = _FAB;
+  factory FvButton.fab({
+    Key? key,
+    required BuildContext context,
+    required VoidCallback onPressed,
+    required Icon icon,
+    Color? color,
+    // required Widget child,
+  }) = FolivoraFab;
 
-// factory FvButton.expandedFAB({
+// factory FvButton.expandedFab({
 //   required VoidCallback onPressed,
 //   required Widget label,
 //   Widget? icon,
 //   Color? backgroundColor,
-// }) = _ExpandedFAB;
+// }) = FolivoraExpandedFAB;
 
 }
