@@ -14,6 +14,7 @@ class ButtonExamplesPage extends StatelessWidget {
         children: [
           FvTopNavigationBar.backButton(
             context: context,
+            widgetWidth: 40,
           ),
           SizedBox(height: Sizer.unitHeight.lp12),
           Row(
