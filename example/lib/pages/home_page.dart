@@ -1,14 +1,14 @@
 import 'package:example/constants/path/route_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:folivora_palette/folivora_palette.dart';
+import 'package:folivora_design_system/folivora_design_system.dart';
 import 'package:folivora_widget/folivora_widget.dart';
 import 'package:go_router/go_router.dart';
 
-import 'view_model/theme_view_model.dart';
+import '../view_model/theme_view_model.dart';
 
-class HomeScreen extends ConsumerWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomePage extends ConsumerWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,7 +19,7 @@ class HomeScreen extends ConsumerWidget {
               context: context,
               textWidget: Text(
                 "Folivora Widget",
-                style: FvTypo.title3,
+                style: FvTypography.title3,
               )),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

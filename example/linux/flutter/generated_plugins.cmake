@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  folivora_sizer
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

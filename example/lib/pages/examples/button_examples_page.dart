@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:folivora_design_system/folivora_design_system.dart';
+import 'package:folivora_sizer/folivora_sizer.dart';
 import 'package:folivora_widget/folivora_widget.dart';
 
 class ButtonExamplesPage extends StatelessWidget {
@@ -8,11 +10,12 @@ class ButtonExamplesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           FvTopNavigationBar.backButton(
             context: context,
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: Sizer.unitHeight.lp12),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -20,34 +23,34 @@ class ButtonExamplesPage extends StatelessWidget {
                 context: context,
                 onPressed: () {},
                 text: "Convex",
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.convex(
                 context: context,
                 onPressed: () {},
-                width: 92,
+                width: 80,
                 icon: Icons.add,
                 text: "Icon",
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.convex(
                 context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.convex(
                 context: context,
                 text: "Disabled",
                 onPressed: () {},
                 widgetStatus: WidgetStatus.disabled,
-                width: 92,
+                width: 80,
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: Sizer.unitHeight.lp12),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -55,14 +58,13 @@ class ButtonExamplesPage extends StatelessWidget {
                 context: context,
                 onPressed: () {},
                 text: "Elevated",
-                width: 92,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.elevated(
                 context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
-                width: 92,
+                width: 80,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -76,24 +78,24 @@ class ButtonExamplesPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.elevated(
                 context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.elevated(
                 context: context,
                 onPressed: () {},
                 text: "Disabled",
                 widgetStatus: WidgetStatus.disabled,
-                width: 92,
+                width: 80,
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: Sizer.unitHeight.lp12),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -101,13 +103,13 @@ class ButtonExamplesPage extends StatelessWidget {
                 context: context,
                 onPressed: () {},
                 text: "Filled",
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.filled(
                 context: context,
                 onPressed: () {},
-                width: 92,
+                width: 80,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -121,24 +123,24 @@ class ButtonExamplesPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.filled(
                 context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.filled(
                 context: context,
                 onPressed: () {},
                 text: "Disabled",
                 widgetStatus: WidgetStatus.disabled,
-                width: 92,
+                width: 80,
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: Sizer.unitHeight.lp12),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -146,13 +148,14 @@ class ButtonExamplesPage extends StatelessWidget {
                 context: context,
                 onPressed: () {},
                 text: "Filled Tonal",
-                width: 92,
+                textStyle: FvTypography.caption2,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.filledTonal(
                 context: context,
                 onPressed: () {},
-                width: 92,
+                width: 80,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -166,24 +169,24 @@ class ButtonExamplesPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.filledTonal(
                 context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.loading,
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.filledTonal(
                 context: context,
                 onPressed: () {},
                 text: "Disabled",
                 widgetStatus: WidgetStatus.disabled,
-                width: 92,
+                width: 80,
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: Sizer.unitHeight.lp12),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -191,13 +194,13 @@ class ButtonExamplesPage extends StatelessWidget {
                 context: context,
                 onPressed: () {},
                 text: "Outlined",
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.outlined(
                 context: context,
                 onPressed: () {},
-                width: 92,
+                width: 80,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -209,31 +212,31 @@ class ButtonExamplesPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.outlined(
                 context: context,
                 widgetStatus: WidgetStatus.loading,
                 onPressed: () {},
                 text: "Outlined",
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.outlined(
                 context: context,
                 onPressed: () {},
                 widgetStatus: WidgetStatus.disabled,
                 text: "Disabled",
-                width: 92,
+                width: 80,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: Sizer.unitHeight.lp12),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FvButton.text(onPressed: () {}, child: const Text("Text")),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.text(
                   onPressed: () {},
                   child: Row(
@@ -245,7 +248,7 @@ class ButtonExamplesPage extends StatelessWidget {
                       Text("Icon"),
                     ],
                   )),
-              const SizedBox(width: 8),
+              SizedBox(width: Sizer.unitWidth.lp4),
               FvButton.text(
                 onPressed: () {},
                 status: WidgetStatus.disabled,
@@ -253,22 +256,33 @@ class ButtonExamplesPage extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20),
-          FvButton.icon(
-              context: context,
-              onPressed: () {},
-              icon: const Icon(Icons.wb_incandescent_outlined)),
-          const SizedBox(height: 20),
+          SizedBox(height: Sizer.unitHeight.lp12),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              FvButton.icon(
+                context: context,
+                onPressed: () {},
+                icon: const Icon(Icons.wb_incandescent_outlined),
+              ),
+              SizedBox(width: Sizer.unitWidth.lp16),
               FvButton.fab(
                 context: context,
+                heroTag: "FAB",
                 onPressed: () {},
                 icon: const Icon(Icons.abc),
               ),
+              SizedBox(width: Sizer.unitWidth.lp16),
+              FvButton.extendedFab(
+                context: context,
+                heroTag: "Extended FAB",
+                onPressed: () {},
+                icon: const Icon(Icons.edit_note),
+                text: "Extended FAB",
+              ),
             ],
           ),
-          const SizedBox(height: 20),
+          const Spacer(),
           Column(
             children: [
               FvButton.filled(
@@ -279,7 +293,7 @@ class ButtonExamplesPage extends StatelessWidget {
                 height: 48,
                 circular: 0,
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: Sizer.unitHeight.lp12),
               FvButton.filled(
                 context: context,
                 onPressed: () {},
@@ -288,7 +302,7 @@ class ButtonExamplesPage extends StatelessWidget {
                 height: 48,
                 circular: 0,
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: Sizer.unitHeight.lp12),
               FvButton.filled(
                 context: context,
                 onPressed: () {},
@@ -300,6 +314,9 @@ class ButtonExamplesPage extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(
+            height: Sizer.unitPadding.bottomSafeArea,
+          )
         ],
       ),
     );

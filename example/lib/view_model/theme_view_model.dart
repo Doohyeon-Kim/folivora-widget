@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:folivora_palette/folivora_palette.dart';
+import 'package:folivora_design_system/folivora_design_system.dart';
 
 final themeProvider =
     StateNotifierProvider<ThemeViewModel, ThemeData>((ref) => ThemeViewModel());
 
 class ThemeViewModel extends StateNotifier<ThemeData> {
-  ThemeViewModel() : super(FvTheme.light);
+  ThemeViewModel() : super(FvLightTheme.themeData);
 
   void setLightMode() {
-    FvTheme.state = ThemeState.light;
-    state = FvTheme.light;
+    state = FvLightTheme.themeData;
   }
 
   void setDarkMode() {
-    FvTheme.state = ThemeState.dark;
-    state = FvTheme.dark;
+    state = FvDarkTheme.themeData;
   }
 }
