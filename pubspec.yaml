@@ -1,8 +1,7 @@
 name: folivora_widget
 description: Collection of Flutter Widgets made by Doohyeon Kim.
-
-publish_to: 'none'
-version: 1.0.0+1
+version: 0.0.1
+repository: "https://github.com/Doohyeon-Kim/folivora-widget.git"
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
@@ -11,9 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   cupertino_icons: ^1.0.5
-  folivora_palette: ^0.0.9
+  folivora_design_system: ^0.0.1
 
 dev_dependencies:
   flutter_test:

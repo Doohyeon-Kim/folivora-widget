@@ -226,8 +226,41 @@ class FolivoraFab extends FvButton {
     required BuildContext context,
     required VoidCallback onPressed,
     required Widget icon,
+    String? heroTag,
     Widget? child,
     Color? color,
   }) : super(
-            key: key, buttonWidget: FloatingActionButton(onPressed: onPressed, child: icon,));
+            key: key,
+            buttonWidget: FloatingActionButton(
+              onPressed: onPressed,
+              heroTag: heroTag,
+              child: icon,
+            ));
+}
+
+class FolivoraExtendedFab extends FvButton {
+  FolivoraExtendedFab({
+    Key? key,
+    required BuildContext context,
+    required VoidCallback onPressed,
+    required Widget icon,
+    String? heroTag,
+    Widget? child,
+    Color? color,
+    String? text,
+  }) : super(
+          key: key,
+          buttonWidget: FloatingActionButton.extended(
+            onPressed: onPressed,
+            heroTag: heroTag,
+            label: Row(
+              children: [
+                icon,
+                Text(
+                  text ?? "",
+                ),
+              ],
+            ),
+          ),
+        );
 }

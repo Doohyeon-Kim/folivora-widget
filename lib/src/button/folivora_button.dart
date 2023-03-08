@@ -114,15 +114,19 @@ abstract class FvButton extends FvWidget {
     required BuildContext context,
     required VoidCallback onPressed,
     required Icon icon,
+    String? heroTag,
     Color? color,
     // required Widget child,
   }) = FolivoraFab;
 
-// factory FvButton.expandedFab({
-//   required VoidCallback onPressed,
-//   required Widget label,
-//   Widget? icon,
-//   Color? backgroundColor,
-// }) = FolivoraExpandedFAB;
-
+  factory FvButton.extendedFab({
+    Key? key,
+    required BuildContext context,
+    required VoidCallback onPressed,
+    required Icon icon,
+    Color? color,
+    String? heroTag,
+    String? text,
+    Widget? child,
+  }) = FolivoraExtendedFab;
 }
