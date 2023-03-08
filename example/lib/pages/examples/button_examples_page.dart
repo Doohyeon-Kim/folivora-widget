@@ -14,223 +14,224 @@ class ButtonExamplesPage extends StatelessWidget {
         children: [
           FvTopNavigationBar.backButton(
             context: context,
-            widgetWidth: 40,
           ),
           SizedBox(height: Sizer.unitHeight.lp12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FvButton.convex(
-                context: context,
-                onPressed: () {},
-                text: "Convex",
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.convex(
-                context: context,
-                onPressed: () {},
-                width: 80,
-                icon: Icons.add,
-                text: "Icon",
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.convex(
-                context: context,
-                onPressed: () {},
-                widgetStatus: WidgetStatus.loading,
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.convex(
-                context: context,
-                text: "Disabled",
-                onPressed: () {},
-                widgetStatus: WidgetStatus.disabled,
-                width: 80,
-              ),
-            ],
-          ),
-          SizedBox(height: Sizer.unitHeight.lp12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FvButton.elevated(
-                context: context,
-                onPressed: () {},
-                text: "Elevated",
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.elevated(
-                context: context,
-                onPressed: () {},
-                widgetStatus: WidgetStatus.loading,
-                width: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.add,
-                      size: 20,
-                    ),
-                    Text(
-                      "Icon",
-                    ),
-                  ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Sizer.unitWidth.lp12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FvButton.convex(
+                  context: context,
+                  onPressed: () {},
+                  text: "Convex",
+                  width: 80,
                 ),
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.elevated(
-                context: context,
-                onPressed: () {},
-                widgetStatus: WidgetStatus.loading,
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.elevated(
-                context: context,
-                onPressed: () {},
-                text: "Disabled",
-                widgetStatus: WidgetStatus.disabled,
-                width: 80,
-              ),
-            ],
+                FvButton.convex(
+                  context: context,
+                  onPressed: () {},
+                  width: 80,
+                  icon: Icons.add,
+                  text: "Icon",
+                ),
+                FvButton.convex(
+                  context: context,
+                  onPressed: () {},
+                  widgetStatus: WidgetStatus.loading,
+                  width: 80,
+                ),
+                FvButton.convex(
+                  context: context,
+                  text: "Disabled",
+                  onPressed: () {},
+                  widgetStatus: WidgetStatus.disabled,
+                  width: 80,
+                ),
+              ],
+            ),
           ),
           SizedBox(height: Sizer.unitHeight.lp12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FvButton.filled(
-                context: context,
-                onPressed: () {},
-                text: "Filled",
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.filled(
-                context: context,
-                onPressed: () {},
-                width: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.add,
-                      size: 20,
-                    ),
-                    Text(
-                      "Icon",
-                    ),
-                  ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Sizer.unitWidth.lp12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FvButton.elevated(
+                  context: context,
+                  onPressed: () {},
+                  text: "Elevated",
                 ),
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.filled(
-                context: context,
-                onPressed: () {},
-                widgetStatus: WidgetStatus.loading,
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.filled(
-                context: context,
-                onPressed: () {},
-                text: "Disabled",
-                widgetStatus: WidgetStatus.disabled,
-                width: 80,
-              ),
-            ],
+                FvButton.elevated(
+                  context: context,
+                  onPressed: () {},
+                  widgetStatus: WidgetStatus.loading,
+                  width: 80,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.add,
+                        size: 20,
+                      ),
+                      Text(
+                        "Icon",
+                      ),
+                    ],
+                  ),
+                ),
+                FvButton.elevated(
+                  context: context,
+                  onPressed: () {},
+                  widgetStatus: WidgetStatus.loading,
+                  width: 80,
+                ),
+                FvButton.elevated(
+                  context: context,
+                  onPressed: () {},
+                  text: "Disabled",
+                  widgetStatus: WidgetStatus.disabled,
+                  width: 80,
+                ),
+              ],
+            ),
           ),
           SizedBox(height: Sizer.unitHeight.lp12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FvButton.filledTonal(
-                context: context,
-                onPressed: () {},
-                text: "Filled Tonal",
-                textStyle: FvTypography.caption2,
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.filledTonal(
-                context: context,
-                onPressed: () {},
-                width: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.add,
-                      size: 20,
-                    ),
-                    Text(
-                      "Icon",
-                    ),
-                  ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Sizer.unitWidth.lp12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FvButton.filled(
+                  context: context,
+                  onPressed: () {},
+                  text: "Filled",
+                  width: 80,
                 ),
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.filledTonal(
-                context: context,
-                onPressed: () {},
-                widgetStatus: WidgetStatus.loading,
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.filledTonal(
-                context: context,
-                onPressed: () {},
-                text: "Disabled",
-                widgetStatus: WidgetStatus.disabled,
-                width: 80,
-              ),
-            ],
+                SizedBox(width: Sizer.unitWidth.lp4),
+                FvButton.filled(
+                  context: context,
+                  onPressed: () {},
+                  width: 80,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.add,
+                        size: 20,
+                      ),
+                      Text(
+                        "Icon",
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: Sizer.unitWidth.lp4),
+                FvButton.filled(
+                  context: context,
+                  onPressed: () {},
+                  widgetStatus: WidgetStatus.loading,
+                  width: 80,
+                ),
+                SizedBox(width: Sizer.unitWidth.lp4),
+                FvButton.filled(
+                  context: context,
+                  onPressed: () {},
+                  text: "Disabled",
+                  widgetStatus: WidgetStatus.disabled,
+                  width: 80,
+                ),
+              ],
+            ),
           ),
           SizedBox(height: Sizer.unitHeight.lp12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FvButton.outlined(
-                context: context,
-                onPressed: () {},
-                text: "Outlined",
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.outlined(
-                context: context,
-                onPressed: () {},
-                width: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.add,
-                      size: 20,
-                    ),
-                    Text("Icon"),
-                  ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Sizer.unitWidth.lp12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FvButton.filledTonal(
+                  context: context,
+                  onPressed: () {},
+                  text: "Filled Tonal",
+                  textStyle: FvTypography.caption1,
+                  width: 80,
                 ),
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.outlined(
-                context: context,
-                widgetStatus: WidgetStatus.loading,
-                onPressed: () {},
-                text: "Outlined",
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-              FvButton.outlined(
-                context: context,
-                onPressed: () {},
-                widgetStatus: WidgetStatus.disabled,
-                text: "Disabled",
-                width: 80,
-              ),
-              SizedBox(width: Sizer.unitWidth.lp4),
-            ],
+                FvButton.filledTonal(
+                  context: context,
+                  onPressed: () {},
+                  width: 80,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.add,
+                        size: 20,
+                      ),
+                      Text(
+                        "Icon",
+                      ),
+                    ],
+                  ),
+                ),
+                FvButton.filledTonal(
+                  context: context,
+                  onPressed: () {},
+                  widgetStatus: WidgetStatus.loading,
+                  width: 80,
+                ),
+                FvButton.filledTonal(
+                  context: context,
+                  onPressed: () {},
+                  text: "Disabled",
+                  widgetStatus: WidgetStatus.disabled,
+                  width: 80,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: Sizer.unitHeight.lp12),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Sizer.unitWidth.lp12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FvButton.outlined(
+                  context: context,
+                  onPressed: () {},
+                  text: "Outlined",
+                  width: 80,
+                ),
+                FvButton.outlined(
+                  context: context,
+                  onPressed: () {},
+                  width: 80,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.add,
+                        size: 20,
+                      ),
+                      Text("Icon"),
+                    ],
+                  ),
+                ),
+                FvButton.outlined(
+                  context: context,
+                  widgetStatus: WidgetStatus.loading,
+                  onPressed: () {},
+                  text: "Outlined",
+                  width: 80,
+                ),
+                FvButton.outlined(
+                  context: context,
+                  onPressed: () {},
+                  widgetStatus: WidgetStatus.disabled,
+                  text: "Disabled",
+                  width: 80,
+                ),
+              ],
+            ),
           ),
           SizedBox(height: Sizer.unitHeight.lp12),
           Row(
@@ -294,7 +295,7 @@ class ButtonExamplesPage extends StatelessWidget {
                 height: 48,
                 circular: 0,
               ),
-              SizedBox(height: Sizer.unitHeight.lp12),
+              SizedBox(height: Sizer.unitHeight.lp4),
               FvButton.filled(
                 context: context,
                 onPressed: () {},
@@ -303,7 +304,7 @@ class ButtonExamplesPage extends StatelessWidget {
                 height: 48,
                 circular: 0,
               ),
-              SizedBox(height: Sizer.unitHeight.lp12),
+              SizedBox(height: Sizer.unitHeight.lp4),
               FvButton.filled(
                 context: context,
                 onPressed: () {},
